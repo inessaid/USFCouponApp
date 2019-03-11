@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "780132047672",
+    "firebase_url": "https://coupon-app-46f51.firebaseio.com",
+    "project_id": "coupon-app-46f51",
+    "storage_bucket": "coupon-app-46f51.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:780132047672:android:963ba80ed0e3037b",
+        "android_client_info": {
+          "package_name": "edu.usf.cse.labrador.usfcouponapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "780132047672-b70m4p2qa7coqfo607ugg9nnldkucjut.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "edu.usf.cse.labrador.usfcouponapp",
+            "certificate_hash": "fae55ea8e870f12e9a5459ad7164acc9950e9bb7"
+          }
+        },
+        {
+          "client_id": "780132047672-jc1a7p4j0velotot2ekvnia25c7301a2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAlYsNttPsqaVV561l08aEmAk6vit_NH9A"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "780132047672-jc1a7p4j0velotot2ekvnia25c7301a2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

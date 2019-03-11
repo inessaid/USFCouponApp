@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">USF Coupon App</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="title_coupons">coupons</string>
+    <string name="title_favorites">favorites</string>
+    <string name="title_map">map</string>
+    <string name="facebook_application_id" translatable="false">YOUR_APP_ID</string>
+    <string name="facebook_login_protocol_scheme" translatable="false">fbYOUR_APP_ID</string>
+    <string name="email_id">email_id</string>
+    <string name="password">password</string>
+    <string name="login">login</string>
+    <string name="create_a_new_account">create_a_new_account</string>
+    <string name="image">image</string>
+</resources>
