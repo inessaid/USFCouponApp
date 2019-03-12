@@ -10,6 +10,40 @@
         android:paddingLeft="24dp"
         android:paddingRight="24dp"
         android:paddingTop="56dp">
+
+        <!-- First Name Label -->
+        <EditText
+            android:id="@+id/input_firstName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="First Name"
+            android:inputType="textPersonName" />
+
+        <!-- Last Name Label -->
+        <EditText
+            android:id="@+id/input_lastName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Last Name"
+            android:inputType="textPersonName" />
+
+        <!-- Data of Birth Label -->
+        <EditText
+            android:id="@+id/input_dateOfBirth"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Date Of Birth"
+            android:inputType="datetime" />
+
+        <!-- Phone Number Label -->
+        <EditText
+            android:id="@+id/input_phone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Phone Number"
+            android:inputType="phone" />
+
+
         <!-- Email Label -->
         <EditText
             android:id="@+id/input_email"
