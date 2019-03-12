@@ -15,11 +15,27 @@
       },
       "oauth_client": [
         {
+          "client_id": "780132047672-i4do9jd629ff20fqlduff29oou9tf217.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "edu.usf.cse.labrador.usfcouponapp",
+            "certificate_hash": "c69f0e261b73174bdb3cd80828e845d338e0379e"
+          }
+        },
+        {
           "client_id": "780132047672-b70m4p2qa7coqfo607ugg9nnldkucjut.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "edu.usf.cse.labrador.usfcouponapp",
             "certificate_hash": "fae55ea8e870f12e9a5459ad7164acc9950e9bb7"
+          }
+        },
+        {
+          "client_id": "780132047672-m4tatuf2jvobsul157psq66qjnb99glt.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "edu.usf.cse.labrador.usfcouponapp",
+            "certificate_hash": "3c48137ab957121dc119b131520f0cdf523826a6"
           }
         },
         {

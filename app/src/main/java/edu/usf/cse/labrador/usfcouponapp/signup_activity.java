@@ -17,8 +17,9 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+
 public class signup_activity extends AppCompatActivity {
-    private EditText name, email_id, passwordcheck;
+    private EditText first_name, last_name, dob, phone_num, email_id, passwordcheck;
     private FirebaseAuth mAuth;
     private static final String TAG = "";
     private ProgressBar progressBar;
@@ -35,7 +36,11 @@ public class signup_activity extends AppCompatActivity {
             }
         });
         mAuth = FirebaseAuth.getInstance();
-        email_id = (EditText) findViewById(R.id.input_email);
+        //first_name = (EditText) findViewById(R.id.input_firstName);
+        //last_name = (EditText) findViewById(R.id.input_lastName);
+        //dob = (EditText) findViewById(R.id.input_dateOfBirth);
+        //phone_num = (EditText) findViewById(R.id.input_phone);
+        //email_id = (EditText) findViewById(R.id.input_email);
         progressBar = (ProgressBar) findViewById(R.id.progressBar);
         passwordcheck = (EditText) findViewById(R.id.input_password);
         Button ahsignup = (Button) findViewById(R.id.btn_signup);
@@ -45,7 +50,7 @@ public class signup_activity extends AppCompatActivity {
                 String email = email_id.getText().toString();
                 String password = passwordcheck.getText().toString();
                 if (TextUtils.isEmpty(email)) {
-                    Toast.makeText(getApplicationContext(), "Enter Eamil Id", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "Enter Email Id", Toast.LENGTH_SHORT).show();
                     return;
                 }
                 if (TextUtils.isEmpty(password)) {
@@ -59,14 +64,16 @@ public class signup_activity extends AppCompatActivity {
                             public void onComplete(@NonNull Task<AuthResult> task) {
                                 progressBar.setVisibility(View.GONE);
                                 if (task.isSuccessful()) {
-                                    // Sign in success, update UI with the signed-in user's information
+                                    // Sign up success, update UI with the signed-in user's information
                                     Log.d(TAG, "createUserWithEmail:success");
                                     FirebaseUser user = mAuth.getCurrentUser();
+                                    String uid = user.getUid();
+
                                     Intent intent = new Intent(signup_activity.this, MainActivity.class);
                                     startActivity(intent);
                                     finish();
                                 } else {
-                                    // If sign in fails, display a message to the user.
+                                    // If sign up fails, display a message to the user.
                                     Log.w(TAG, "createUserWithEmail:failure", task.getException());
                                     Toast.makeText(signup_activity.this, "Authentication failed.",
                                             Toast.LENGTH_SHORT).show();

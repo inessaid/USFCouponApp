@@ -56,7 +56,7 @@ public class settingsFragment extends Fragment {
 
 
         );
-        return rootView;
+       return rootView;
 
     }
 
