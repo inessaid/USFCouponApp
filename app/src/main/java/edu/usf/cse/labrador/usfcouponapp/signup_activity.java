@@ -17,12 +17,19 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.FirebaseFirestore;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class signup_activity extends AppCompatActivity {
     private EditText first_name, last_name, dob, phone_num, email_id, passwordcheck;
     private FirebaseAuth mAuth;
     private static final String TAG = "";
     private ProgressBar progressBar;
+
+    // variable to store sign-up data from user to FireBase
+    private FirebaseFirestore FirebaseData;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,12 +42,13 @@ public class signup_activity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        FirebaseData = FirebaseFirestore.getInstance(); // reference to initialize variable
         mAuth = FirebaseAuth.getInstance();
-        //first_name = (EditText) findViewById(R.id.input_firstName);
-        //last_name = (EditText) findViewById(R.id.input_lastName);
-        //dob = (EditText) findViewById(R.id.input_dateOfBirth);
-        //phone_num = (EditText) findViewById(R.id.input_phone);
-        //email_id = (EditText) findViewById(R.id.input_email);
+        first_name = (EditText) findViewById(R.id.input_firstName);
+        last_name = (EditText) findViewById(R.id.input_lastName);
+        dob = (EditText) findViewById(R.id.input_dateOfBirth);
+        phone_num = (EditText) findViewById(R.id.input_phone);
+        email_id = (EditText) findViewById(R.id.input_email);
         progressBar = (ProgressBar) findViewById(R.id.progressBar);
         passwordcheck = (EditText) findViewById(R.id.input_password);
         Button ahsignup = (Button) findViewById(R.id.btn_signup);
@@ -68,6 +76,22 @@ public class signup_activity extends AppCompatActivity {
                                     Log.d(TAG, "createUserWithEmail:success");
                                     FirebaseUser user = mAuth.getCurrentUser();
                                     String uid = user.getUid();
+                                    String fn = first_name.getText().toString();
+                                    String ln = last_name.getText().toString();
+                                    String db = dob.getText().toString();
+                                    String ph = phone_num.getText().toString();
+
+                                    // map to collect user sign-up data
+                                    Map<String, String> userMap = new HashMap<>();
+
+                                    userMap.put("UID", uid);
+                                    userMap.put("first name", fn);
+                                    userMap.put("last name", ln);
+                                    userMap.put("DOB", db);
+                                    userMap.put("phone number", ph);
+
+                                    // store sign-up data to firebase collection location based on UID
+                                    FirebaseData.collection("users").add(userMap);
 
                                     Intent intent = new Intent(signup_activity.this, MainActivity.class);
                                     startActivity(intent);
