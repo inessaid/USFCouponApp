@@ -17,19 +17,20 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 
 import java.util.HashMap;
 import java.util.Map;
+
 
 public class signup_activity extends AppCompatActivity {
     private EditText first_name, last_name, dob, phone_num, email_id, passwordcheck;
     private FirebaseAuth mAuth;
     private static final String TAG = "";
     private ProgressBar progressBar;
-
-    // variable to store sign-up data from user to FireBase
-    private FirebaseFirestore FirebaseData;
+    //FirebaseDatabase databaseUsers;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,7 +43,7 @@ public class signup_activity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        FirebaseData = FirebaseFirestore.getInstance(); // reference to initialize variable
+
         mAuth = FirebaseAuth.getInstance();
         first_name = (EditText) findViewById(R.id.input_firstName);
         last_name = (EditText) findViewById(R.id.input_lastName);
@@ -74,26 +75,32 @@ public class signup_activity extends AppCompatActivity {
                                 if (task.isSuccessful()) {
                                     // Sign up success, update UI with the signed-in user's information
                                     Log.d(TAG, "createUserWithEmail:success");
+                                    //final FirebaseDatabase databaseUsers = FirebaseDatabase.getInstance("https://coupon-app-46f51.firebaseio.com/"); //Realtime database
+                                    DatabaseReference ref;
+                                    ref = FirebaseDatabase.getInstance().getReference();
+
                                     FirebaseUser user = mAuth.getCurrentUser();
+
+                                    //Get user information and sets it to a string.
                                     String uid = user.getUid();
-                                    String fn = first_name.getText().toString();
-                                    String ln = last_name.getText().toString();
-                                    String db = dob.getText().toString();
-                                    String ph = phone_num.getText().toString();
+                                    String fname = first_name.getText().toString();
+                                    String lname = last_name.getText().toString();
+                                    String birthdate = dob.getText().toString();
+                                    String pnum = phone_num.getText().toString();
 
-                                    // map to collect user sign-up data
-                                    Map<String, String> userMap = new HashMap<>();
+                                    String id = ref.push().getKey();
+                                   // String id = databaseUsers.push().getKey();
 
-                                    userMap.put("UID", uid);
-                                    userMap.put("first name", fn);
-                                    userMap.put("last name", ln);
-                                    userMap.put("DOB", db);
-                                    userMap.put("phone number", ph);
+                                    UserInfo theuser = new UserInfo(fname, lname, birthdate, pnum, 0);
 
-                                    // store sign-up data to firebase collection location based on UID
-                                    FirebaseData.collection("users").add(userMap);
+                                    //Sends data to realtime database with uid linked to it.
+                                    ref.child("users").child(uid).child("firstname").setValue(fname);
+                                    ref.child("users").child(uid).child("lastname").setValue(lname);
+                                    ref.child("users").child(uid).child("Date of Birth").setValue(birthdate);
+                                    ref.child("users").child(uid).child("Phone Number").setValue(pnum);
+                                    ref.child("users").child(uid).child("isBuis").setValue(0);  //Change setValue once you add a button for isBusiness in signup.
 
-                                    Intent intent = new Intent(signup_activity.this, MainActivity.class);
+                                    Intent intent = new Intent(signup_activity.this, MainActivity.class); //Starts main activity.
                                     startActivity(intent);
                                     finish();
                                 } else {
@@ -107,4 +114,8 @@ public class signup_activity extends AppCompatActivity {
             }
         });
     }
+
 }
+
+
+
