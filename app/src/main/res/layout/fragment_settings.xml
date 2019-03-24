@@ -1,18 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent" android:layout_height="match_parent">
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:text="@string/settings"
-        android:textAppearance="@style/Base.TextAppearance.AppCompat.Large" />
 
     <Button
         android:id="@+id/signout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/logout"
-        />
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:text="@string/logout" />
+
+    <TextView
+        android:id="@+id/display_firstname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="67dp"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/display_lastname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/display_firstname"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="114dp"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/display_DOB"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/display_firstname"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="153dp"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/display_phonenum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/display_firstname"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="204dp"
+        android:text="TextView" />
+
 </RelativeLayout>

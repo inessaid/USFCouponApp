@@ -5,6 +5,7 @@ import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.MenuItem;
 import android.widget.TextView;
 
@@ -14,6 +15,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        //userID = getIntent().getStringExtra("EXTRA_UID");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
@@ -53,7 +55,12 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
                 break;
 
             case R.id.navigation_settings:
+                Log.d("BLAH","Going to settings");
+                //Bundle bundle = new Bundle();
+                //bundle.putString("FRAG_UID", userID);
                 fragment = new settingsFragment();
+                //fragment.setArguments(bundle);
+                Log.d("BLAH", "After Switch statement of new settingsFragment");
                 break;
         }
 

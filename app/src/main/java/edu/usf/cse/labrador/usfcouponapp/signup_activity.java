@@ -75,7 +75,6 @@ public class signup_activity extends AppCompatActivity {
                                 if (task.isSuccessful()) {
                                     // Sign up success, update UI with the signed-in user's information
                                     Log.d(TAG, "createUserWithEmail:success");
-                                    //final FirebaseDatabase databaseUsers = FirebaseDatabase.getInstance("https://coupon-app-46f51.firebaseio.com/"); //Realtime database
                                     DatabaseReference ref;
                                     ref = FirebaseDatabase.getInstance().getReference();
 
@@ -87,20 +86,18 @@ public class signup_activity extends AppCompatActivity {
                                     String lname = last_name.getText().toString();
                                     String birthdate = dob.getText().toString();
                                     String pnum = phone_num.getText().toString();
-
                                     String id = ref.push().getKey();
-                                   // String id = databaseUsers.push().getKey();
-
-                                    UserInfo theuser = new UserInfo(fname, lname, birthdate, pnum, 0);
 
                                     //Sends data to realtime database with uid linked to it.
-                                    ref.child("users").child(uid).child("firstname").setValue(fname);
-                                    ref.child("users").child(uid).child("lastname").setValue(lname);
-                                    ref.child("users").child(uid).child("Date of Birth").setValue(birthdate);
-                                    ref.child("users").child(uid).child("Phone Number").setValue(pnum);
-                                    ref.child("users").child(uid).child("isBuis").setValue(0);  //Change setValue once you add a button for isBusiness in signup.
+
+                                    ref.child("users").child(uid).child("firstName").setValue(fname);
+                                    ref.child("users").child(uid).child("lastName").setValue(lname);
+                                    ref.child("users").child(uid).child("DOB").setValue(birthdate);
+                                    ref.child("users").child(uid).child("phoneNumber").setValue(pnum);
+                                    ref.child("users").child(uid).child("isBusiness").setValue(0);  //Change setValue once you add a button for isBusiness in signup.
 
                                     Intent intent = new Intent(signup_activity.this, MainActivity.class); //Starts main activity.
+                                    intent.putExtra("EXTRA_UID", uid);
                                     startActivity(intent);
                                     finish();
                                 } else {

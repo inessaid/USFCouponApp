@@ -2,77 +2,64 @@ package edu.usf.cse.labrador.usfcouponapp;
 
 public class UserInfo {
 
-     String firstName;
-     String lastName;
-     String DOB;
-     String phoneNumber;
-     int isBusiness;
+     private String firstName;
+     private String lastName;
+     private String DOB;
+     private String phoneNumber;
+     private int isBusiness;
 
     //Constructor
-    public UserInfo(String fname, String lname, String DOB, String phoneNumber, int isbuis)
+    public UserInfo(String firstName, String lastName, String DOB, String phoneNumber, int isBusiness)
     {
-        this.firstName = fname;
-        this.lastName = lname;
+        this.firstName = firstName;
+        this.lastName = lastName;
         this.DOB = DOB;
         this.phoneNumber = phoneNumber;
-        this.isBusiness = isbuis;
+        this.isBusiness = isBusiness;
     }
     //Default constructor
     public UserInfo()
     {
 
     }
-        //Accessor Methods
-    public String getFirstname()
-    {
+
+    public String getFirstname() {
         return firstName;
     }
 
-    public String getLastname()
-    {
+    public void setFirstname(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastname() {
         return lastName;
     }
 
-    public String getDOB()
-    {
+    public void setLastname(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public String getDob() {
         return DOB;
     }
 
-    public String getPhoneNumber()
-    {
+    public void setDob(String DOB) {
+        this.DOB = DOB;
+    }
+
+    public String getPhonenumber() {
         return phoneNumber;
     }
 
-    public boolean isBusiness()
-    {
-        if(isBusiness == 1)
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
-    }
-        //Mutator Methods
-
-    public void setFirstName(String fname)
-    {
-        this.firstName = fname;
+    public void setPhonenumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
     }
 
-    public void setLastName(String lname)
-    {
-        this.lastName = lname;
+    public int getIsbusiness() {
+        return isBusiness;
     }
 
-    public void setDOB(String dob)
-    {
-        this.DOB = dob;
-    }
-
-    public void setPhoneNumber(String newphonenum)
-    {
-        this.phoneNumber = newphonenum;
+    public void setIsbusiness(int isBusiness) {
+        this.isBusiness = isBusiness;
     }
 }
