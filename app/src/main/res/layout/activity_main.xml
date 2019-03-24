@@ -5,35 +5,22 @@
     android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginTop="20dp"
-    android:layout_marginStart="15dp"
-    android:layout_marginEnd="15dp"
+
 
     tools:context=".MainActivity">
 
     // just the frame layout
+
     <FrameLayout
         android:id="@+id/fragment_container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginBottom="56dp"
         android:text="@string/title_home"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Coupon Name"
-            android:textAlignment="center"
-            android:textSize="20dp"
-            android:textStyle="bold"
-            android:textColor="@color/colorPrimaryDark"
-            />
-    </RelativeLayout>
+
+    </FrameLayout>
 
     <android.support.design.widget.BottomNavigationView
         android:id="@+id/navigation"
