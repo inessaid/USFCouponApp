@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AdminPage">
+
+    <TextView
+        android:id="@+id/Slogan_category"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="27dp"
+        android:text="Add New Product"
+        android:textAlignment="center"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        />
+
+
+    <LinearLayout
+        android:id="@+id/linear_category_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Slogan_category"
+        android:orientation="horizontal"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:layout_marginTop="45dp"
+
+      >
+
+        <ImageView
+            android:id="@+id/boba"
+            android:layout_width="100dp"
+            android:layout_height="80dp"
+            android:src="@drawable/boba" />
+
+        <ImageView
+            android:id="@+id/coffee"
+            android:layout_width="91dp"
+            android:layout_height="80dp"
+            android:src="@drawable/coffee" />
+
+        <ImageView
+            android:id="@+id/food"
+            android:layout_width="86dp"
+            android:layout_height="79dp"
+            android:src="@drawable/food" />
+
+        <ImageView
+            android:id="@+id/services"
+            android:layout_width="105dp"
+            android:layout_height="match_parent"
+            android:src="@drawable/services" />
+
+
+
+
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        android:id="@+id/linear2_category_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/linear_category_layout"
+        android:orientation="horizontal"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:layout_marginTop="45dp"
+
+        >
+
+        <ImageView
+            android:id="@+id/clothing"
+            android:layout_width="93dp"
+            android:layout_height="80dp"
+            android:src="@drawable/clothes" />
+
+        <ImageView
+            android:id="@+id/tea"
+            android:layout_width="94dp"
+            android:layout_height="80dp"
+            android:src="@drawable/tea" />
+
+        <ImageView
+            android:id="@+id/pastries"
+            android:layout_width="79dp"
+            android:layout_height="79dp"
+            android:src="@drawable/pastries" />
+
+        <ImageView
+            android:id="@+id/icecream"
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:src="@drawable/icecream" />
+
+
+
+
+    </LinearLayout>
+
+
+</RelativeLayout>
