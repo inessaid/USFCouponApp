@@ -55,14 +55,39 @@
         android:hint="Coupon Due Date"
         android:layout_marginLeft="45dp"
         android:layout_marginRight="45dp"
+        />
 
+    <EditText
+        android:id="@+id/business_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/coupon_dueDate"
+        android:inputType="textMultiLine"
+        android:layout_marginTop="6dp"
+        android:padding="20dp"
+        android:hint="Business Name"
+        android:layout_marginLeft="45dp"
+        android:layout_marginRight="45dp"
+        />
+
+    <EditText
+        android:id="@+id/business_address"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/business_name"
+        android:inputType="textMultiLine"
+        android:layout_marginTop="6dp"
+        android:padding="20dp"
+        android:hint="Business Address"
+        android:layout_marginLeft="45dp"
+        android:layout_marginRight="45dp"
         />
 
     <Button
         android:id="@+id/add_new_coupon"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/coupon_dueDate"
+        android:layout_below="@+id/business_address"
         android:text="Add Coupon"
         android:layout_marginLeft="45dp"
         android:layout_marginRight="45dp"

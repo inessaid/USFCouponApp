@@ -33,10 +33,10 @@ import java.util.HashMap;
 
 public class AdminAddNewProductActivity extends AppCompatActivity {
 
-    private String CategoryName,Description,dueDate,Name, saveCurrentDate, saveCurrentTime;
+    private String CategoryName,Description,dueDate,Name, saveCurrentDate, saveCurrentTime, businessName, businessAddress;
     private Button AddNewCouponButton;
     private ImageView InputCouponImage;
-    private EditText InputCouponName,InputCouponDescription,InputCouponDueDate;
+    private EditText InputCouponName,InputCouponDescription,InputCouponDueDate, InputBusinessAddress,InputBusinessName;
 private static final int GalleryPick =1;
 private Uri ImageUri;
 private String couponRandomKey,downloadImageUrl;
@@ -56,6 +56,9 @@ private DatabaseReference CouponRef;
         InputCouponDescription =(EditText) findViewById(R.id.coupon_description);
         InputCouponName =(EditText) findViewById(R.id.coupon_name);
         InputCouponDueDate=(EditText) findViewById(R.id.coupon_dueDate);
+        InputBusinessAddress =(EditText) findViewById(R.id.business_address);
+        InputBusinessName=(EditText) findViewById(R.id.business_name);
+
 InputCouponImage.setOnClickListener(new View.OnClickListener() {
     @Override
     public void onClick(View v) {
@@ -100,6 +103,8 @@ AddNewCouponButton.setOnClickListener(new View.OnClickListener() {
         Description=InputCouponDescription.getText().toString();
         Name=InputCouponName.getText().toString();
         dueDate=InputCouponDueDate.getText().toString();
+        businessAddress=InputBusinessAddress.getText().toString();
+        businessName=InputBusinessName.getText().toString();
 
         if(ImageUri==null)
         {
@@ -192,6 +197,9 @@ AddNewCouponButton.setOnClickListener(new View.OnClickListener() {
         CouponMap.put("category",CategoryName);
         CouponMap.put("duedate",dueDate);
         CouponMap.put("Name",Name);
+        CouponMap.put("Business Address",businessAddress);
+        CouponMap.put("Business Name",businessName);
+
 
         CouponRef.child(couponRandomKey).updateChildren(CouponMap)
                 .addOnCompleteListener(new OnCompleteListener<Void>() {
