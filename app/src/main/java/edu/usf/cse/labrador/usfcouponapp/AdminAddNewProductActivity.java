@@ -195,10 +195,10 @@ AddNewCouponButton.setOnClickListener(new View.OnClickListener() {
         CouponMap.put("description",Description);
         CouponMap.put("image",downloadImageUrl);
         CouponMap.put("category",CategoryName);
-        CouponMap.put("duedate",dueDate);
-        CouponMap.put("Name",Name);
-        CouponMap.put("Business Address",businessAddress);
-        CouponMap.put("Business Name",businessName);
+        CouponMap.put("dueDate",dueDate);
+        CouponMap.put("couponName",Name);
+        CouponMap.put("businessAddress",businessAddress);
+        CouponMap.put("businessName",businessName);
 
 
         CouponRef.child(couponRandomKey).updateChildren(CouponMap)

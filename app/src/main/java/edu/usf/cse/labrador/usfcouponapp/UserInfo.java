@@ -7,15 +7,16 @@ public class UserInfo {
      private String DOB;
      private String phoneNumber;
      private int isBusiness;
-
+     private String email;
     //Constructor
-    public UserInfo(String firstName, String lastName, String DOB, String phoneNumber, int isBusiness)
+    public UserInfo(String firstName, String lastName, String DOB, String phoneNumber, int isBusiness, String email)
     {
         this.firstName = firstName;
         this.lastName = lastName;
         this.DOB = DOB;
         this.phoneNumber = phoneNumber;
         this.isBusiness = isBusiness;
+        this.email = email;
     }
     //Default constructor
     public UserInfo()
@@ -61,5 +62,15 @@ public class UserInfo {
 
     public void setIsbusiness(int isBusiness) {
         this.isBusiness = isBusiness;
+    }
+
+    public String getEmail()
+    {
+        return email;
+    }
+
+    public void setEmail(String email)
+    {
+        this.email = email;
     }
 }

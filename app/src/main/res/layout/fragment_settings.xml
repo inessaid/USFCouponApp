@@ -52,4 +52,13 @@
         android:layout_marginTop="204dp"
         android:text="TextView" />
 
+    <TextView
+        android:id="@+id/display_email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/display_firstname"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="171dp"
+        android:text="TextView" />
+
 </RelativeLayout>

@@ -86,6 +86,7 @@ public class signup_activity extends AppCompatActivity {
                                     String lname = last_name.getText().toString();
                                     String birthdate = dob.getText().toString();
                                     String pnum = phone_num.getText().toString();
+                                    String email = email_id.getText().toString();
                                     String id = ref.push().getKey();
 
                                     //Sends data to realtime database with uid linked to it.
@@ -94,6 +95,7 @@ public class signup_activity extends AppCompatActivity {
                                     ref.child("users").child(uid).child("lastName").setValue(lname);
                                     ref.child("users").child(uid).child("DOB").setValue(birthdate);
                                     ref.child("users").child(uid).child("phoneNumber").setValue(pnum);
+                                    ref.child("users").child(uid).child("email").setValue(email);
                                     ref.child("users").child(uid).child("isBusiness").setValue(0);  //Change setValue once you add a button for isBusiness in signup.
 
                                     Intent intent = new Intent(signup_activity.this, MainActivity.class); //Starts main activity.

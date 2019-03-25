@@ -55,20 +55,12 @@ public class settingsFragment extends Fragment {
         mFirebaseDatabase = FirebaseDatabase.getInstance();
         myRef = mFirebaseDatabase.getReference().child("users").child(userID);
 
-        Log.d("BLAH","After getting user = mAuth.getCurentUser():");
-
-
-        Log.d("BLAH","After getting userUID");
-        Log.d("BLAH",userID);
 
         final TextView firstname = (TextView) rootView.findViewById(R.id.display_firstname);
         final TextView lastname = (TextView) rootView.findViewById(R.id.display_lastname);
         final TextView DOB = (TextView) rootView.findViewById(R.id.display_DOB);
         final TextView phone_num = (TextView) rootView.findViewById(R.id.display_phonenum);
-
-        Log.d("BLAH","After getview of textview");
-
-
+        final TextView email = (TextView) rootView.findViewById(R.id.display_email);
 
         LogOut = (Button) rootView.findViewById(R.id.signout);
         mAuthListner = new FirebaseAuth.AuthStateListener() {
@@ -94,29 +86,20 @@ public class settingsFragment extends Fragment {
         myRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                Log.d("BLAH","Beginning of onDataChange");
-                //UserInfo uInfo = new UserInfo();
                 for(DataSnapshot ds: dataSnapshot.getChildren())
                 {
-                    Log.d("BLAH","Beginning of for loop");
-                    //UserInfo uInfo = new UserInfo();
                     UserInfo userInfo = dataSnapshot.getValue(UserInfo.class);
-                    Log.d("BLAH",userID);
-                    Log.d("BLAH", "After Retrieving info from database");
                     String fName = userInfo.getFirstname();
                     String lName = userInfo.getLastname();
                     String bday = userInfo.getDob();
                     String pnum = userInfo.getPhonenumber();
-                    Log.d("BLAH","DATA:" + fName + " " + lName);
-                    Log.d("BLAH","Before setting Text");
+                    String theemail = userInfo.getEmail();
                     firstname.setText(fName);
                     lastname.setText(lName);
                     DOB.setText(bday);
                     phone_num.setText(pnum);
-                    Log.d("BLAH","After setting Text");
+                    email.setText(theemail);
                 }
-
-
             }
 
             @Override
@@ -124,48 +107,7 @@ public class settingsFragment extends Fragment {
 
             }
         });
-       Log.d("BLAH","Before Return statement");
        return rootView;
 
     }
-
-    /*
-    private void showData(DataSnapshot dataSnapshot)
-    {
-        String userID;
-        mFirebaseDatabase = FirebaseDatabase.getInstance();
-        myRef = mFirebaseDatabase.getReference();
-        mAuth = FirebaseAuth.getInstance();
-        FirebaseUser user = mAuth.getCurrentUser();
-        userID = user.getUid();
-
-        Log.d("BLAH","Beginning of showData");
-        for(DataSnapshot ds: dataSnapshot.getChildren())
-        {
-            Log.d("BLAH","Beginning of for loop");
-            UserInfo uInfo = new UserInfo();
-            uInfo.setFirstName(ds.child("users").child(userID).getValue(UserInfo.class).getFirstName());
-            uInfo.setLastName(ds.child("users").child(userID).getValue(UserInfo.class).getLastName());
-            uInfo.setDOB(ds.child("user").child(userID).getValue(UserInfo.class).getDOB());
-            uInfo.setPhoneNumber(ds.child("users").child(userID).getValue(UserInfo.class).getPhoneNumber());
-            //uInfo.setIsBusiness(ds.child("users").child(userID).getValue(UserInfo.class).getIsBusiness());
-            Log.d("BLAH", "After Retrieving info from database");
-
-            String fName = uInfo.getFirstName();
-            String lName = uInfo.getLastName();
-            String bday = uInfo.getDOB();
-            String pnum = uInfo.getPhoneNumber();
-
-
-
-            Log.d("BLAH","After adding it to array");
-            //array.add(business);
-            Log.d("BLAH","After creating ArrayAdapter OBJ");
-            Log.d("BLAH","After setting Listview to adapter");
-
-        }
-
-
-    }
-    */
 }
