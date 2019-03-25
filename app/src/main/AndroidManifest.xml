@@ -18,7 +18,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".AdminAddNewProductActivity"></activity>
+        <activity android:name=".AdminAddNewProductActivity" />
         <activity android:name=".AdminPage" />
         <activity android:name=".AdminLogin" />
         <activity android:name=".signup_activity" />
