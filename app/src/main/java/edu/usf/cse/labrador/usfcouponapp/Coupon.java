@@ -7,33 +7,33 @@ public class Coupon {
     private String description;
     private String category;
     private String dueDate;
+    private String date;
     private String image;
     private String pid;
     private String time;
     private String couponName;
 
-    public Coupon(String address, String businessname, String description, String category, String duedate, String image, String pid, String time, String couponName) {
-        this.businessAddress = address;
-        this.businessName = businessname;
+    public Coupon(String businessAddress, String businessName, String description, String category, String dueDate, String date ,String image, String pid, String time, String couponName) {
+        this.businessAddress = businessAddress;
+        this.businessName = businessName;
         this.description = description;
         this.category = category;
-        this.dueDate = duedate;
+        this.dueDate = dueDate;
+        this.date = date;
         this.image = image;
         this.pid = pid;
         this.time = time;
         this.couponName = couponName;
     }
-
     public Coupon()
     {
 
     }
-
-    public String getAddress() {
+    public String getBusinessaddress() {
         return businessAddress;
     }
 
-    public void setAddress(String businessAddress) {
+    public void setBusinessaddress(String businessAddress) {
         this.businessAddress = businessAddress;
     }
 
@@ -69,6 +69,13 @@ public class Coupon {
         this.dueDate = dueDate;
     }
 
+    public String getDate(){
+        return date;
+    }
+
+    public void setDate(String date){
+        this.date = date;
+    }
     public String getImage() {
         return image;
     }
@@ -91,5 +98,13 @@ public class Coupon {
 
     public void setTime(String time) {
         this.time = time;
+    }
+
+    public String getCouponname() {
+        return couponName;
+    }
+
+    public void setCouponname(String couponName) {
+        this.couponName = couponName;
     }
 }

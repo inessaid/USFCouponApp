@@ -7,26 +7,8 @@
     android:layout_marginEnd="15dp"
     android:layout_marginBottom="25dp">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:text="Coupons"
-        android:textAppearance="@style/Base.TextAppearance.AppCompat.Large" />
-
-    <RelativeLayout
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Coupon Name"
-            android:textAlignment="center"
-            android:textColor="@color/colorPrimaryDark"
-            android:textSize="20dp"
-            android:textStyle="bold" />
-    </RelativeLayout>
-
+        android:layout_height="match_parent" />
 </RelativeLayout>
