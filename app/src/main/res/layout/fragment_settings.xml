@@ -6,7 +6,7 @@
     android:layout_marginBottom="60dp"
     android:layout_marginLeft="15dp"
     android:layout_marginRight="15dp"
-    android:layout_marginTop="15dp">
+    android:layout_marginTop="40dp">
 
     <Button
         android:id="@+id/signout"
@@ -63,8 +63,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="14dp"
-        android:layout_marginTop="200dp"
+        android:layout_marginStart="175dp"
+        android:layout_marginTop="221dp"
         android:text="TextView" />
 
     <ImageView
@@ -95,5 +95,16 @@
         android:layout_marginRight="10dp"
         android:layout_toLeftOf="@id/display_DOB"
         android:src="@drawable/dob" />
+
+    <ImageView
+        android:id="@+id/email"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="220dp"
+        android:layout_marginRight="-165dp"
+        android:layout_toLeftOf="@id/display_email"
+        android:src="@drawable/email" />
+
+
 
 </RelativeLayout>
