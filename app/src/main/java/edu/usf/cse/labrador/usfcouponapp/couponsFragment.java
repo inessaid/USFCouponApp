@@ -47,19 +47,17 @@ public class couponsFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState)
     {
-       // Log.d("BLAH","Beginning of onCreateView");
         final View rootView = inflater.inflate(R.layout.fragment_coupons, container, false);
         recyclerView = (RecyclerView) rootView.findViewById(R.id.recyclerView);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this.getContext()));
-        //****************************************************************************
+
         mAuth = FirebaseAuth.getInstance();
         final FirebaseUser user = mAuth.getCurrentUser();
-        //final String userID = user.getUid();
         mFirebaseDatabase = FirebaseDatabase.getInstance();
         myRef = mFirebaseDatabase.getReference().child("Coupons");
         couponList = new ArrayList<>();
-       // Log.d("BLAH","Before addValueEventListener");
+
 
         myRef.addValueEventListener(new ValueEventListener()
         {
@@ -89,18 +87,8 @@ public class couponsFragment extends Fragment {
             }
         });
 
-        Log.d("BLAH", "AFTER addevent");
-        //*******************************************************************
-        /*
-        couponList = new ArrayList<>();
-        String hi = "Hello";
-        for(int i = 0; i <= 10; i++)
-        {
-            Coupon coupon = new Coupon("The address", hi, "The Description","The Category","The duedate","The date Administered","The image url","The pid?", "The time", "The coupon name");
-            //Coupon coupon = new Coupon("The address", "The business", "The Description","The Category","The duedate","The date Administered","The image url","The pid?", "The time", "The coupon name");
-            couponList.add(coupon);
-        }
-        */
+
+
         //Instantiates a layout XML file into its corresponding View objects
         adapter = new MyAdapter(couponList, this.getContext());
         Handler handler = new Handler();
@@ -118,38 +106,6 @@ public class couponsFragment extends Fragment {
     public void onStart()
     {
         super.onStart();
-        //mAuth.addAuthStateListener(mAuthListner);
     }
 
 }
-
-
-/*
-        couponRef.addValueEventListener(new ValueEventListener() {
-
-            //final List<Coupon> couponList = new ArrayList<>();
-
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot)
-            {
-                for (DataSnapshot ds : snapshot.getChildren())
-                {
-                    Coupon coupon = ds.getValue(Coupon.class);
-                    //couponList.add(coupon);
-                    Log.d("BLAH", coupon.getBusinessname());
-                    Log.d("BLAH", coupon.getAddress());
-                }
-                myCouponList = (RecyclerView) CouponFragmentView.findViewById(R.id.couponList);
-                LinearLayoutManager llm = new LinearLayoutManager(getApplicationContext());
-                myCouponList.setLayoutManager(llm);
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError)
-            {
-
-            }
-
-
-        });
- */

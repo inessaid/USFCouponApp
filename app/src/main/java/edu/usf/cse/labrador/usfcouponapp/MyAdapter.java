@@ -1,12 +1,17 @@
 package edu.usf.cse.labrador.usfcouponapp;
 
+import android.net.Uri;
+import android.content.Intent;
 import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.OnMapReadyCallback;
 
 import org.w3c.dom.Text;
 
@@ -67,6 +72,18 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder>{
             admissiondate = (TextView) itemView.findViewById(R.id.date);
             descript = (TextView) itemView.findViewById(R.id.description);
             address = (TextView) itemView.findViewById(R.id.address);
+            address.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    //String theAddress;
+                    String theAddress = address.getText().toString();
+                    Uri direction = Uri.parse("google.navigation:q=" + theAddress);
+                    Intent intent = new Intent(Intent.ACTION_VIEW, direction);
+                    intent.setPackage("com.google.android.apps.maps");
+                    context.startActivity(intent);
+                    //Log.d("BLAH","The Address ONCLick:" + theAddress);
+                }
+            });
             couponName = (TextView) itemView.findViewById(R.id.couponName);
         }
 
