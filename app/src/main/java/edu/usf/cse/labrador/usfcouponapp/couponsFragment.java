@@ -64,21 +64,11 @@ public class couponsFragment extends Fragment {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot)
             {
-                //Log.d("BLAH","Beginning of onDataChange");
                 for(DataSnapshot ds: dataSnapshot.getChildren())
                 {
                         Coupon coupon = ds.getValue(Coupon.class);
                         couponList.add(coupon);
-                        Log.d("BLAH", "BusinessName:" + coupon.getBusinessname());
-                        Log.d("BLAH", "BusinessAddress:" + coupon.getBusinessaddress());
-                        Log.d("BLAH", "CouponName:" + coupon.getCouponname());
-                        Log.d("BLAH", "BusinessName:" + coupon.getDuedate());
-                        Log.d("BLAH", "DateAdmin:" + coupon.getDate());
-                        Log.d("BLAH", "Description:" + coupon.getDescription());
                 }
-                //Log.d("BLAH","After for loop in onDataChange");
-                //adapter = new MyAdapter(couponList, this.getContext());
-
             }
 
             @Override
@@ -86,10 +76,6 @@ public class couponsFragment extends Fragment {
 
             }
         });
-
-
-
-        //Instantiates a layout XML file into its corresponding View objects
         adapter = new MyAdapter(couponList, this.getContext());
         Handler handler = new Handler();
         handler.postDelayed(new Runnable() {

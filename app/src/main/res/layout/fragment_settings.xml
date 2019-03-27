@@ -17,56 +17,6 @@
         android:text="@string/logout" />
 
 
-    <TextView
-        android:id="@+id/display_firstname"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="132dp"
-        android:layout_marginTop="155dp"
-        android:text="TextView" />
-
-    <TextView
-        android:id="@+id/display_lastname"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/display_firstname"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="65dp"
-        android:layout_marginTop="155dp"
-        android:text="TextView" />
-
-    <TextView
-        android:id="@+id/display_DOB"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/display_firstname"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="319dp"
-        android:layout_marginEnd="-45dp"
-        android:text="TextView" />
-
-    <TextView
-        android:id="@+id/display_phonenum"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/display_firstname"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="266dp"
-        android:layout_marginEnd="-44dp"
-        android:text="TextView" />
-
-    <TextView
-        android:id="@+id/display_email"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="175dp"
-        android:layout_marginTop="221dp"
-        android:text="TextView" />
-
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="98dp"
@@ -79,32 +29,79 @@
 
         tools:srcCompat="@tools:sample/avatars" />
 
-    <ImageView
-        android:id="@+id/phonen"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="260dp"
-        android:layout_marginRight="10dp"
-        android:layout_toLeftOf="@id/display_DOB"
-        android:src="@drawable/phone" />
-    <ImageView
-        android:id="@+id/dob"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="310dp"
-        android:layout_marginRight="10dp"
-        android:layout_toLeftOf="@id/display_DOB"
-        android:src="@drawable/dob" />
+    <TextView
+        android:id="@+id/display_name"
+        android:layout_width="277dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imageView"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="68dp"
+        android:layout_marginTop="22dp"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/display_DOB"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="56dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="121dp"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/display_email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="56dp"
+        android:layout_marginEnd="20dp"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/display_phonenum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/display_email"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="56dp"
+        android:layout_marginTop="18dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="160dp"
+        android:text="TextView" />
 
     <ImageView
         android:id="@+id/email"
         android:layout_width="30dp"
         android:layout_height="30dp"
-        android:layout_marginTop="220dp"
-        android:layout_marginRight="-165dp"
-        android:layout_toLeftOf="@id/display_email"
-        android:src="@drawable/email" />
+        android:layout_alignParentStart="true"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="15dp"
+        app:srcCompat="@drawable/email" />
 
+    <ImageView
+        android:id="@+id/phone"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_alignStart="@+id/email"
+        android:layout_alignTop="@+id/display_phonenum"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="-5dp"
+        app:srcCompat="@drawable/phone" />
+
+    <ImageView
+        android:id="@+id/bday"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_alignStart="@+id/email"
+        android:layout_alignBottom="@+id/display_DOB"
+        app:srcCompat="@drawable/dob" />
 
 
 </RelativeLayout>

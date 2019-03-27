@@ -37,7 +37,6 @@ public class settingsFragment extends Fragment {
 
     @Override
     public void onStart() {
-        Log.d("BLAH","Beginning of onStart");
         super.onStart();
         mAuth.addAuthStateListener(mAuthListner);
     }
@@ -46,8 +45,6 @@ public class settingsFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-       // return inflater.inflate(R.layout.fragment_settings,null);
-        Log.d("BLAH", "Beginning of onCreateView");
         final View rootView = inflater.inflate(R.layout.fragment_settings, container, false);
         mAuth = FirebaseAuth.getInstance();
         final FirebaseUser user = mAuth.getCurrentUser();
@@ -56,8 +53,7 @@ public class settingsFragment extends Fragment {
         myRef = mFirebaseDatabase.getReference().child("users").child(userID);
 
 
-        final TextView firstname = (TextView) rootView.findViewById(R.id.display_firstname);
-        final TextView lastname = (TextView) rootView.findViewById(R.id.display_lastname);
+        final TextView name = (TextView) rootView.findViewById(R.id.display_name);
         final TextView DOB = (TextView) rootView.findViewById(R.id.display_DOB);
         final TextView phone_num = (TextView) rootView.findViewById(R.id.display_phonenum);
         final TextView email = (TextView) rootView.findViewById(R.id.display_email);
@@ -94,8 +90,8 @@ public class settingsFragment extends Fragment {
                     String bday = userInfo.getDob();
                     String pnum = userInfo.getPhonenumber();
                     String theemail = userInfo.getEmail();
-                    firstname.setText(fName);
-                    lastname.setText(lName);
+                    String fullname = fName + " " + lName;
+                    name.setText(fullname);
                     DOB.setText(bday);
                     phone_num.setText(pnum);
                     email.setText(theemail);

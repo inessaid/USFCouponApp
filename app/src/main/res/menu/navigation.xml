@@ -12,10 +12,6 @@
         android:title="@string/title_favorites" />
 
     <item
-        android:id="@+id/navigation_map"
-        android:icon="@android:drawable/ic_menu_mapmode"
-        android:title="@string/title_map" />
-    <item
         android:id="@+id/navigation_settings"
         android:icon="@android:drawable/ic_menu_manage"
         android:title="Settings" />
