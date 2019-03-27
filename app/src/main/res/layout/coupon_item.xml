@@ -1,12 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical">
 
     <android.support.v7.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="15dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -14,44 +18,84 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/businessName"
+                android:id="@+id/couponName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="TextView" />
-
-            <TextView
-                android:id="@+id/address"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="TextView" />
-
-            <TextView
-                android:id="@+id/couponName"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="TextView" />
-
-            <TextView
-                android:id="@+id/expireDate"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="TextView" />
+                android:text="Coupon Name"
+                android:textAlignment="center"
+                android:textSize="20dp"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/date"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_below="@+id/couponName"
+                android:layout_marginStart="130dp"
                 android:layout_weight="1"
-                android:text="TextView" />
+                android:text="Date"
+                android:textAlignment="center" />
+
+            <ImageView
+                android:id="@+id/coupon_image"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_below="@+id/date"
+                android:layout_marginTop="2dp"
+                android:scaleType="centerCrop" />
 
             <TextView
                 android:id="@+id/description"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="TextView" />
+                android:layout_below="@+id/coupon_image"
+                android:text="Description"
+                android:textAlignment="center"
+                android:textSize="16dp" />
+
+            <TextView
+                android:id="@+id/expireDate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/description"
+                android:layout_weight="1"
+                android:text="Expire Date"
+                android:textAlignment="center"
+                android:textSize="16dp" />
+
+            <TextView
+                android:id="@+id/businessName"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/expireDate"
+                android:layout_marginLeft="80dp"
+                android:layout_marginTop="3dp"
+                android:layout_marginRight="80dp"
+                android:text="Business Name"
+                android:textAlignment="center"
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/address"
+                android:layout_width="43dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="-48dp"
+                android:layout_weight="1"
+                android:background="@android:drawable/ic_menu_directions"
+                android:text=""
+                android:textColor="@android:color/transparent" />
+
+            <Button
+                android:id="@+id/add_to_favorites"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_below="@id/expireDate"
+                android:layout_marginStart="300dp"
+                android:layout_marginEnd="30dp"
+                android:layout_marginTop="-60dp"
+                android:background="@android:drawable/btn_star_big_on"
+                android:clickable="true" />
 
         </LinearLayout>
     </android.support.v7.widget.CardView>
